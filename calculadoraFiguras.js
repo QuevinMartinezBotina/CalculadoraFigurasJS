@@ -38,16 +38,22 @@ console.groupEnd();
 /* Triangulo Isosceles */
 console.group("TrianguloIsosceles");
 
-function altura(lado1, lado2, base) {
-    if (lado1 === lado2 && lado1 != base) {
-        alert('isoceles')
-        const altura = Math.sqrt(lado1 ** 2 - base ** 2 / 4)
-        console.log(altura)
+function alturaIsosceles(lado1, lado2, base) {
+    if (lado1 == lado2 && lado1 != base) {
+        /* alert('isoceles') */
+        return Math.sqrt(lado1 ** 2 - base ** 2 / 4)
+
     } else {
-        alert('no lo se')
+        /* alert('no lo se') */
+        alert("No es Isosceles, lados distintos, lado1: " + lado1 + " lado 2: " + lado2);
     }
 }
-altura(6, 6, 4)
+
+function suma(lado1, lado2, base) {
+
+    return lado1 + lado2 + base
+
+}
 
 console.groupEnd();
 
@@ -119,15 +125,15 @@ function calcularAreaTriangulo() {
 
 function calcularAlturaIsosceles() {
 
-    const inputLadoUno = document.getElementById("lado1");
-    const inputLadoDos = document.getElementById("lado2");
-    const inpuBase = document.getElementById("base");
+    const inputLadoUno = document.getElementById("ladoIso1");
+    const inputLadoDos = document.getElementById("ladoIso2");
+    const inpuBase = document.getElementById("baseIso");
 
     const ladoUno = parseInt(inputLadoUno.value);
     const ladoDos = parseInt(inputLadoDos.value);
     const base = parseInt(inpuBase.value);
 
-    const altura = altura(ladoUno, ladoDos, base);
+    const altura = alturaIsosceles(ladoUno, ladoDos, base);
 
     alert(altura);
 }
